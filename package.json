@@ -1,0 +1,14 @@
+{
+  "name": "TsData",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "./node_modules/.bin/cubejs-server"
+  },
+  "template": "docker",
+  "templateVersion": "0.26.38",
+  "devDependencies": {
+    "@cubejs-backend/mssql-driver": "^0.26.38",
+    "@cubejs-backend/server": "^0.26.38"
+  }
+}
