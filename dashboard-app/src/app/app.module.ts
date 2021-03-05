@@ -39,7 +39,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddToDashboardDialogComponent } from './explore/add-to-dashboard-dialog/add-to-dashboard-dialog.component';
 import { QueryRendererComponent } from './explore/query-renderer/query-renderer.component';
 import apolloClient from '../graphql/client';
-const API_URL = 'https://real-time-dashboard-api.herokuapp.com';
+const API_URL = 'https://cubejs-heroku-demo-app.herokuapp.com';
 const CUBEJS_TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTQzMzI0OTIsImV4cCI6MTYxNDQxODg5Mn0.r2NHFAdiKHw2WNt3sp592UumVmVtfyZB3Xq25aLZrKg';
 const cubejsOptions = {
