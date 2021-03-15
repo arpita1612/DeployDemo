@@ -21,9 +21,25 @@ interface Safe extends GridsterConfig {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit {public ChartQuery = {
+
+  measures: ["TSData.IntEquivalent"],
+  dimensions: ["TSData.projectname","TSData.monthyear"],
+  // filters: [
+  //   {
+  //     member: "TSData.monthyear",
+  //     operator: "equals",
+  //     values: ["2021-1","2021-2","2021-3", "2020-7", "2020-8", "2020-9","2020-10","2020-11","2020-9=12"]
+  //   }
+  // ],
+  timeDimensions: [],
+  order : {}
+};
+
   dashboardItems = new BehaviorSubject<any[]>([]);
   options: Safe;
+  search : boolean = false;
+  monthyear: any
   onLayoutChange = (event) => {
     setTimeout(() => {
       this.handleLayoutChange(event);
@@ -200,6 +216,21 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  change(){
+    this.search = true;
+  }
+  filterItem(id: number, { query, pivotConfig, chartType }: any){
+
+    console.log(`ID = ${id} \n query = ${JSON.stringify(query)} \n pivotConfig = ${JSON.stringify(pivotConfig)} \n chartType = ${chartType}`)
+    console.log(query["dimensions"][1])
+    // this.monthyear = query["dimensions"][1]
+    
+    // this.monthyear = this.monthyear.filter((res: any) => {
+    //   return res.monthyear.toLocaleLowerCase().match(this.monthyear.toLocaleLowerCase());
+    // })
+
+  }
+  
   editItem(id: number, { query, pivotConfig, chartType }: any) {
     this.router.navigate(['/explore'], {
       queryParams: {
@@ -211,3 +242,5 @@ export class DashboardComponent implements OnInit {
     });
   }
 }
+
+

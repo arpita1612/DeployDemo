@@ -19,7 +19,7 @@ export class AddToDashboardDialogComponent {
     private apollo: Apollo,
     private router: Router
   ) {}
-
+    
   ngOnInit() {
     this.chartForm = this.formBuilder.group({
       name: ['New Chart', Validators.required],
