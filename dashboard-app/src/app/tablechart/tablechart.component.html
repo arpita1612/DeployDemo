@@ -1,19 +1,19 @@
-<!-- 
-  <p>
-  tablechart works!
+<!-- <p>
+    tablechart works!
 </p>
 
 <div>
-  {{Details}}
+    {{Details}}
 </div> -->
 <h2>
-  <b class="display-4 text-primary font-weight-bold align-self-center m-5"> Project Int Equivalent.</b>
+  <b class="display-4 text-primary font-weight-bold align-self-center m-5"> SA TAXI Timesheet.</b>
 </h2>
 <div class="input-group icon-align-right m-5">
   <div class="form-outline">
-    <input  type="search" id="form1" class="form-control sm-col-10" placeholder="Search by MonthYear" [(ngModel)] = "MonthYear" />
+    <input type="search" id="form1" class="form-control sm-col-10" placeholder="Search by MonthYear"
+      [(ngModel)]="MonthYear" />
   </div>
-  <button id="search-button" type="button" class="btn btn-primary" (click) = "Search()">
+  <button id="search-button" type="button" class="btn btn-primary" (click)="Search()">
     <i class="fa fa-search"></i>
   </button>
 </div>
@@ -22,51 +22,94 @@
   <thead class="thead-light">
     <tr>
 
-      <th (click) = "sortTable('TSData.projectname')">
-        Project Name&nbsp; <i class="fa fa-fw fa-sort"></i>
+      <th>
+        Project Name&nbsp; 
       </th>
-      <th (click) = "sortTable('TSData.IntEquivalent')">
-        Int Equivalent&nbsp; <i class="fa fa-fw fa-sort"></i>
+      <th (click)="sortTable('TSData.IntEquivalent')">
+        Hours&nbsp; <i class="fa fa-fw fa-sort"></i>
       </th>
-      <th (click) = "sortTable('TSData.monthyear')">
-        MonthYear&nbsp; <i class="fa fa-fw fa-sort"></i>
+      <th>
+        MonthYear&nbsp;
       </th>
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of Details | orderBy : key : reverse | paginate: { id : 'pages', itemsPerPage: 9, currentPage: page, totalItems: count }">
+    <tr
+      *ngFor="let user of Details | orderBy : key : reverse | paginate: { id : 'pages', itemsPerPage: 9, currentPage: page, totalItems: count }">
       <td>{{user["TSData.projectname"]}}</td>
       <td>{{roundoff(user["TSData.IntEquivalent"])}}</td>
       <td>{{user["TSData.monthyear"]}}</td>
     </tr>
     <tr>
-      <td>Total Int Equivalent </td>
+      <td>Total Hours</td>
       <td>{{roundoff(total)}}</td>
       <td>Month Count = {{count}}</td>
     </tr>
   </tbody>
 </table>
 <div class="m-5">
-  <pagination-controls  id="pages" maxSize="10" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  <pagination-controls id="pages" maxSize="10" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
 </div>
-
-<ag-grid-angular
-    style="width: 700px; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="Details"
-    [columnDefs]="columnDefs"
->
-</ag-grid-angular>
+<!--   
+  <ag-grid-angular
+      style="width: 700px; height: 500px;"
+      class="ag-theme-alpine"
+      [rowData]="Details"
+      [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular> -->
 
 <!-- <ngx-charts-bar-vertical [results] = "ArrayData" ></ngx-charts-bar-vertical> -->
-<!-- <div class="card">
+<div class="card">
   <div class="card-body">
     <div class="card-text">
-      <canvas *ngIf="ready" baseChart height="150" [datasets]="chartData" [labels]="chartLabels"
-        [options]="chartOptions" [colors]="chartColors" [chartType]="chartType">
+      <div class="input-group icon-align-right m-5">
+        <div class="form-outline">
+          <input type="search" id="form1" class="form-control sm-col-10" placeholder="Search by MonthYear"
+            [(ngModel)]="MonthYear1" />
+        </div>
+        <button id="search-button" type="button" class="btn btn-primary" (click)="Search1()">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <canvas 
+        mdbChart baseChart
+        *ngIf="ready" 
+        baseChart height="150" 
+        [datasets]="chartData1" 
+        [labels]="chartLabels1"
+        [options]="chartOptions" 
+        [colors]="chartColors" 
+        [chartType]="chartType" 
+        [legend]="true"
+        (chartHover)="chartHovered($event)" 
+        (chartClick)="chartClicked($event)"
+        >
       </canvas>
     </div>
   </div>
-</div> -->
+</div>
 
+<div class="card">
+  <div class="card-body">
+    <div class="card-text">
+      <canvas mdbChart *ngIf="ready" baseChart height="150" [datasets]="chartData1" [labels]="chartLabels1"
+        [options]="chartOptions" [colors]="chartColors" [chartType]="chartType1" [legend]="true"
+        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="card-text">
+      <canvas mdbChart *ngIf="ready" baseChart height="150" [datasets]="chartData1" [labels]="chartLabels1"
+        [options]="chartOptions" [colors]="chartColors1" [chartType]="chartType2" [legend]="true"
+        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>
+
+<smart-grid *ngIf="ready" [dataSource]="chartData" [filtering]="filtering" [columns]="columns" [sorting]="sorting"
+  #grid id="grid"></smart-grid> -->

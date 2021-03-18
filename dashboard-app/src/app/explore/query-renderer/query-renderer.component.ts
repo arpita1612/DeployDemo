@@ -37,7 +37,6 @@ export class QueryRendererComponent implements OnInit {
 
     if (this.chartType === 'table') {
       this.tableData = resultSet.tablePivot(pivotConfig);
-      console.log("Table Data = \n",this.tableData)
       this.displayedColumns = getDisplayedColumns(
         resultSet.tableColumns(pivotConfig)
       );

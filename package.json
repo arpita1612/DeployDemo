@@ -1,5 +1,5 @@
 {
-  "name": "TsData",
+  "name": "tsdata",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,5 +10,9 @@
   "devDependencies": {
     "@cubejs-backend/mssql-driver": "^0.26.38",
     "@cubejs-backend/server": "^0.26.38"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0"
   }
 }

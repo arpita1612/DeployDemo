@@ -12,7 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -40,15 +40,16 @@ import { AddToDashboardDialogComponent } from './explore/add-to-dashboard-dialog
 import { QueryRendererComponent } from './explore/query-renderer/query-renderer.component';
 import apolloClient from '../graphql/client';
 import { TablechartComponent } from './tablechart/tablechart.component';
+import { FormsModule } from '@angular/forms';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {OrderModule} from 'ngx-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination' ;
-import {NgxChartsModule} from '@swimlane/ngx-charts'
-import { AgGridModule } from 'ag-grid-angular';
-
+import { RouterModule } from '@angular/router';
+import { WavesModule } from 'angular-bootstrap-md'
+import { GridModule } from 'smart-webcomponents-angular/grid';
 const API_URL = 'http://localhost:4000';
 const CUBEJS_TOKEN =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTUzNTU1MTMsImV4cCI6MTYxNTQ0MTkxM30.m-pKJK6ny5ZY3fNycVuUjNjKkrvHAavjpgDZiZpwkQc';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTU4MjIyNDMsImV4cCI6MTYxNTkwODY0M30.7wtpgkdbXg826bnTbWkVp9KC7vm_f98y23enAVBJGnA';
 const cubejsOptions = {
   token: CUBEJS_TOKEN,
   options: {
@@ -74,9 +75,8 @@ const cubejsOptions = {
   entryComponents: [SettingsDialogComponent, AddToDashboardDialogComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
-    NgxChartsModule,
-    AgGridModule.withComponents([]),
     CubejsClientModule.forRoot(cubejsOptions),
     MatButtonModule,
     MatSelectModule,
@@ -101,7 +101,10 @@ const cubejsOptions = {
     FormsModule,
     Ng2SearchPipeModule,
     OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule,
+    WavesModule,
+    GridModule
   ],
   providers: [
     QueryBuilderService,

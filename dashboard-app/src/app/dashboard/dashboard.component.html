@@ -1,5 +1,5 @@
 <div>
-  <app-tablechart chartType="line" [query]="ChartQuery"></app-tablechart>
+  <app-tablechart chartType="bar" [query]="ChartQuery"></app-tablechart>
 </div>
 <!-- <div *ngIf="(dashboardItems | async).length === 0" class="no-items">
   <h1>There are no charts on this dashboard</h1>
@@ -38,16 +38,6 @@
               Edit
             </button>
             <button mat-menu-item (click)="deleteItem(item.id)">Delete</button>
-            <button mat-menu-item (change)="change()">
-              Filter
-            </button>
-            <filter>
-              
-            </filter>
-            <input mat-menu-item class="form-control mr-sm-2" type="search" placeholder="Search by monthyear" aria-label="Search"
-              name="monthyear"  [(ngModel)] = monthyear (ngModelChange) = "filterItem(item.id, item.plain)">
-            <button mat-menu-item class="btn btn-outline-success my-2 my-sm-0" type="submit" (click) = "filterItem(item.id, item.plain)">Search</button>
-        
           </mat-menu>
         </div>
       </query-renderer>

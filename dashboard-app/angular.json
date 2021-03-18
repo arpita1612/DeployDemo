@@ -55,12 +55,14 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css", 
+              "src/styles.css",
+              "./node_modules/smart-webcomponents-angular/source/styles/smart.default.css",
+              "./node_modules/smart-webcomponents-angular/source/styles/smart.turquoise.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",              
-              "node_modules/bootstrap/dist/js/bootstrap.min.js" 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"    
             ]
           },
           "configurations": {
