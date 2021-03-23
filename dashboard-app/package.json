@@ -10,10 +10,8 @@
   "dependencies": {
     "@angular/animations": "~11.2.5",
     "@angular/cdk": "^11.2.4",
-    "@angular/cli": "~11.2.4",
     "@angular/common": "~11.2.5",
     "@angular/compiler": "~11.2.5",
-    "@angular/compiler-cli": "~11.2.5",
     "@angular/core": "~11.2.5",
     "@angular/forms": "~11.2.5",
     "@angular/material": "^11.2.4",
@@ -46,7 +44,9 @@
     "smart-webcomponents-angular": "^9.1.39",
     "tslib": "^2.0.0",
     "typescript": "~4.1.5",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "@angular/cli": "^11.2.5",
+    "@angular/compiler-cli": "^11.2.6"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.3",
@@ -59,7 +59,7 @@
     "ng-credentials": "0.0.1"
   },
   "engines": {
-    "node": "12.18.2",
-    "npm": "6.14.5"
+    "node": "14.16.0",
+    "npm": "6.14.11"
   }
 }
