@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "heroku-postbuild": "ng build --prod",
     "build": "ng build"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~11.2.4",
+    "@angular/compiler-cli": "~11.2.5",
     "@angular/animations": "~11.2.5",
     "@angular/cdk": "^11.2.4",
     "@angular/common": "~11.2.5",
@@ -55,5 +58,9 @@
     "ng-material-dynamic": "0.0.1",
     "ng2-charts": "0.0.1",
     "ng-credentials": "0.0.1"
+  },
+  "engines": {
+    "node": "12.18.2",
+    "npm": "6.14.5"
   }
 }
