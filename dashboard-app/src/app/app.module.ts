@@ -47,6 +47,7 @@ import {NgxPaginationModule} from 'ngx-pagination' ;
 import { RouterModule } from '@angular/router';
 import { WavesModule } from 'angular-bootstrap-md'
 import { GridModule } from 'smart-webcomponents-angular/grid';
+import {AgGridModule} from 'ag-grid-angular'
 const API_URL = 'http://localhost:4000';
 const CUBEJS_TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTU4MjIyNDMsImV4cCI6MTYxNTkwODY0M30.7wtpgkdbXg826bnTbWkVp9KC7vm_f98y23enAVBJGnA';
@@ -78,6 +79,7 @@ const cubejsOptions = {
     FormsModule,
     BrowserAnimationsModule,
     CubejsClientModule.forRoot(cubejsOptions),
+    AgGridModule.withComponents([]),
     MatButtonModule,
     MatSelectModule,
     MatGridListModule,

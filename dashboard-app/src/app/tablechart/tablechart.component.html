@@ -51,15 +51,26 @@
 <div class="m-5">
   <pagination-controls id="pages" maxSize="10" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
 </div>
-<!--   
-  <ag-grid-angular
-      style="width: 700px; height: 500px;"
-      class="ag-theme-alpine"
-      [rowData]="Details"
-      [columnDefs]="columnDefs"
-  >
-  </ag-grid-angular> -->
-
+<div class="row">
+  <div class="col-sm-6">
+    <ag-grid-angular
+        style="width: 600px; height: 500px;"
+        class="ag-theme-balham"
+        [rowData]="Details[0]"
+        [columnDefs]="columnDefs"
+    >
+    </ag-grid-angular>
+  </div>
+  <div class="col-sm-4">
+    <ag-grid-angular
+        style="width: 500px; height: 500px; "
+        class="ag-theme-balham"
+        [rowData]="UserData"
+        [columnDefs]="columnDefs1"
+    >
+    </ag-grid-angular>
+  </div>
+</div>
 <!-- <ngx-charts-bar-vertical [results] = "ArrayData" ></ngx-charts-bar-vertical> -->
 <div class="card">
   <div class="card-body">
@@ -101,15 +112,26 @@
   </div>
 </div>
 
-<!-- <div class="card">
+<div class="card">
   <div class="card-body">
     <div class="card-text">
-      <canvas mdbChart *ngIf="ready" baseChart height="150" [datasets]="chartData1" [labels]="chartLabels1"
-        [options]="chartOptions" [colors]="chartColors1" [chartType]="chartType2" [legend]="true"
-        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <canvas 
+      baseChart
+      *ngIf="ready"  
+      height="150" 
+      [datasets]="chartData1" 
+      [labels]="chartLabels1"
+      [options]="chartOptions" 
+      [colors]="chartColors1" 
+      [chartType]="chartType2" 
+      [legend]="true"
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)">
+    </canvas>
     </div>
   </div>
 </div>
 
-<smart-grid *ngIf="ready" [dataSource]="chartData" [filtering]="filtering" [columns]="columns" [sorting]="sorting"
-  #grid id="grid"></smart-grid> -->
+
+<smart-grid *ngIf="ready" [dataSource]="UserData" [filtering]="filtering" [columns]="columns" [sorting]="sorting"
+  #grid id="grid"></smart-grid>

@@ -21,6 +21,8 @@
     "@apollo/client": "^3.3.11",
     "@cubejs-client/core": "^0.26.55",
     "@cubejs-client/ngx": "^0.26.54",
+    "ag-grid-angular": "^25.1.0",
+    "ag-grid-community": "^25.1.0",
     "angular-bootstrap-md": "^11.0.0",
     "angular-gridster2": "^11.1.4",
     "apollo-angular": "^2.4.0",
